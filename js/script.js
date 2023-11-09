@@ -1,3 +1,10 @@
-document.querySelector(".start").addEventListener("click", function() {
-    window.location.replace("file:///Users/farhankhan/Desktop/softdev/03_Dice_Project/game.html")
-})
+document.querySelector(".start").addEventListener("click", function () {
+    //  if (document.querySelector(".rounds").value!=null){
+    //      if (Number(document.querySelector(".start").value)%2===1){
+            window.location.replace( "game.html")
+    //      }
+    //      else{
+
+    //      }
+    //  }
+});
