@@ -11,3 +11,10 @@ button {
     background-color: sandybrown;
  }
 
+ #box{
+    display:flex;
+ }
+
+.roll2, .player2{
+    text-align: right;
+}
