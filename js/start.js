@@ -1,6 +1,6 @@
 document.querySelector(".start").addEventListener("click", function () {
      if (document.querySelector(".rounds").value  == "") { // if empty
-        document.querySelector(".msg").textContent = "Please enter an odd number"
+        document.querySelector(".msg").textContent = "Please enter a number"
      }
 
      else {
@@ -11,7 +11,7 @@ document.querySelector(".start").addEventListener("click", function () {
          window.location.replace("game.html");
      } else {
          // Handle the case where the content is not a valid odd number
-         document.querySelector(".msg").textContent = "Please enter a valid odd number";
+         document.querySelector(".msg").textContent = "Please enter an odd number";
      } 
 }}
 );
