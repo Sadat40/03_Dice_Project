@@ -10,16 +10,31 @@
 </head>
 
 <body>
-    
-    <h2>Who goes first?</h2> <br><br>
-    <div id="box">
-    <button type = "button" class = "roll1">Roll The Dice!</button></br>
-      <p class="player1"></p>
-      <br><br>
-      <button type = "button" class = "roll2">Roll The Dice!</button></br>
-      <p class="player2"></p>
-      <p class="first"></p>
+
+    <h1>Going To Boston</h1>
+    <div id="initial">
+  Number of Rounds (odd): 
+  <input class="rounds" type="text" size="5"> <br><br>
+  <button class="start">Start the Game</button>
+  <b><p class="msg"></p></b>
     </div>
+
+    <h1 class="roundsNum"></h1>
+    <h2>Who goes first?</h2> <br><br>
+    <div id="players">
+    <button type = "button" class = "roll1">Roll The Dice!</button>
+      
+      <br><br>
+      <button type = "button" class = "roll2">Roll The Dice!</button>
+    </div>
+    <div id="scores">
+      <p class="player1"></p>
+      <p class="player2"></p>
+    </div>
+    
+      <b><p class="first"></p></b>
+    
+
     <footer>
       <button type="button" class="home">Restart Game</button>
     </footer>

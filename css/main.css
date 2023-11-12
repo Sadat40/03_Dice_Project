@@ -1,5 +1,7 @@
+
 body {
     background-color: bisque;
+    text-align: center;
 }
 h1 {
     text-align: center;
@@ -11,10 +13,17 @@ button {
     background-color: sandybrown;
  }
 
- /* #box{
+#players{
     display:flex;
+    justify-content: space-between;
+ 
  }
-*/
+
+ #scores{
+    display:flex;
+    justify-content: space-between;
+ }
+
 .roll1, .roll2{
     padding: 5px;
 } 

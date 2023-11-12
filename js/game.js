@@ -1,3 +1,28 @@
+var currentRound, totalRounds
+
+function start(){
+    document.querySelector(".start").addEventListener("click", function () {
+         if (document.querySelector(".rounds").value  == "") { // if empty
+            document.querySelector(".msg").textContent = "Please enter a number"
+         }
+    
+         else {
+            let val = Number(document.querySelector(".rounds").value)
+            if (val%2===1){  // if odd
+             document.querySelector(".msg").value = ""
+             totalRounds = val
+             document.getElementById("intial").style.display = "none"
+
+         } else {
+             document.querySelector(".msg").textContent = "Please enter an odd number";
+         } 
+    }}
+    );
+    }
+    start()
+
+document.querySelector(".roundsNum").textContent = totalRounds
+
 document.querySelector(".home").addEventListener("click", function() {
     window.location.replace("start.html")
 });
