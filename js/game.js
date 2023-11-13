@@ -26,7 +26,7 @@ let notDone=true
                 totalRounds = val
                 document.getElementById("initial").style.display = "none";
                 document.querySelector(".total").textContent = "Total rounds: " +totalRounds;
-                //document.querySelector(".start").disabled = true;
+                document.querySelector(".start").disabled = true;
                 document.querySelector(".restart").disabled = false;
             } else {
                 document.querySelector(".msg").textContent = "Please enter an odd number";
@@ -52,8 +52,15 @@ function getRandomInt(min, max) {
                 document.querySelector(".roll2").disabled = false;
                 pastFirst=true;
                 }
-            else
+            else{
                 document.querySelector(".first").textContent = "Both players rolled the same number, roll again";
+                document.querySelector(".roll1").disabled = false;
+                document.querySelector(".roll2").disabled = false;
+                document.querySelector(".player2").textContent = ``
+                document.querySelector(".player1").textContent = ``
+                roll1=undefined;
+                roll2=undefined; 
+            }
         }
     }
    
@@ -115,15 +122,20 @@ function getRandomInt(min, max) {
                         p2=false;
                         if (roundsPlayed===totalRounds){
                             if (wins1>wins2){
-                                alert("The final score is " + wins1 + "-" +wins2 + ". Player 1 wins!" );
+                                document.querySelector(".first").textContent="The final score is " + wins1 + "-" +wins2+". Player 1 wins!"
+                                document.querySelector(".roll1").disabled = true;
+                                document.querySelector(".roll2").disabled = true;
                             }
                             else if (wins1<wins2){
-                                alert("The final score is " + wins1 + "-" +wins2 + ". Player 2 wins!" );
+                                document.querySelector(".first").textContent="The final score is " + wins1 + "-" +wins2+". Player 2 wins!"
+                                document.querySelector(".roll1").disabled = true;
+                                document.querySelector(".roll2").disabled = true;
                             }
                             else if (wins1===wins2){
-                                alert("The final score is " + wins1 + "-" +wins2 + ". It's a tie!" );
+                                document.querySelector(".first").textContent="The final score is " + wins1 + "-" +wins2+". It's a tie!!"
+                                document.querySelector(".roll1").disabled = true;
+                                document.querySelector(".roll2").disabled = true;
                             }
-                            restart();
                         }
                     }
                     else{
@@ -198,15 +210,20 @@ function getRandomInt(min, max) {
                         p2=false;
                         if (roundsPlayed===totalRounds){
                             if (wins1>wins2){
-                                alert("The final score is " + wins1 + "-" +wins2 + ". Player 1 wins!" );
+                                document.querySelector(".first").textContent="The final score is " + wins1 + "-" +wins2+". Player 1 wins!"
+                                document.querySelector(".roll1").disabled = true;
+                                document.querySelector(".roll2").disabled = true;
                             }
                             else if (wins1<wins2){
-                                alert("The final score is " + wins1 + "-" +wins2 + ". Player 2 wins!" );
+                                document.querySelector(".first").textContent="The final score is " + wins1 + "-" +wins2+". Player 2 wins!"
+                                document.querySelector(".roll1").disabled = true;
+                                document.querySelector(".roll2").disabled = true;
                             }
                             else if (wins1===wins2){
-                                alert("The final score is " + wins1 + "-" +wins2 + ". It's a tie!" );
+                                document.querySelector(".first").textContent="The final score is " + wins1 + "-" +wins2+". It's a tie!!"
+                                document.querySelector(".roll1").disabled = true;
+                                document.querySelector(".roll2").disabled = true;
                             }
-                            restart();
                         }
                     }   
                     else{
@@ -223,6 +240,7 @@ function getRandomInt(min, max) {
     
     })
     document.querySelector(".restart").addEventListener("click", function () {
+        pastFirst=false;
         restart();
     })
 
@@ -250,6 +268,13 @@ function restart(){
         document.querySelector(".player1").textContent = ``
         document.querySelector(".player1-score").textContent = `Player 1's score: `
         document.querySelector(".player2-score").textContent = `Player 2's score: `
+        document.querySelector(".roll1").disabled = false;
+        document.querySelector(".roll2").disabled = false;
+        document.querySelector(".start").disabled = false;
+        document.querySelector(".restart").disabled = true;
+        roll1=undefined;
+        roll2=undefined;
+        pastFirst=false;
     }
 //for total rounds, call game
 // Call the goesFirst function
