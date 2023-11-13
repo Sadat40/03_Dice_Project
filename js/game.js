@@ -47,6 +47,7 @@ function getRandomInt(min, max) {
                 document.querySelector(".roll1").disabled = false;
                 pastFirst=true;
                 document.querySelector(".current").textContent = `Current round: ` + currentRound
+                document.querySelector(".who").textContent = ""
             }
             else if (roll2 > roll1){
                 document.querySelector(".first").textContent = `Player 2 rolled ${roll2}, they go first!`;
@@ -54,6 +55,7 @@ function getRandomInt(min, max) {
                 document.querySelector(".roll2").disabled = false;
                 pastFirst=true;
                 document.querySelector(".current").textContent = `Current round: ` + currentRound
+                document.querySelector(".who").textContent = ""
                 }
             else{
                 document.querySelector(".first").textContent = "Both players rolled the same number, roll again";
@@ -64,6 +66,7 @@ function getRandomInt(min, max) {
                 roll1=undefined;
                 roll2=undefined; 
                 document.querySelector(".current").textContent = `Current round: ` + currentRound
+                document.querySelector(".who").textContent = ""
             }
         }
     }
@@ -278,6 +281,7 @@ function restart(){
         document.querySelector(".start").disabled = false;
         document.querySelector(".restart").disabled = true;
         document.querySelector(".current").textContent = `Current round: ` 
+        document.querySelector(".who").textContent = `Who goes first?` 
         roll1=undefined;
         roll2=undefined;
         pastFirst=false;
