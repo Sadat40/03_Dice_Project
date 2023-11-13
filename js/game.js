@@ -73,6 +73,7 @@ function getRandomInt(min, max) {
             if (document.querySelector(".roll1").disabled===true){
                 document.querySelector(".current").textContent = `Current round: ` + currentRound
             if (count===0){
+                document.querySelector(".player1").textContent = ``
                 options.push(getRandomInt(1, 6),getRandomInt(1, 6),getRandomInt(1, 6));
                 roll2=Math.max(options[0],options[1],options[2]);
                 document.querySelector(".player2").textContent = `Player 2 rolled: ` + options [0] + `, ` + options[1] + `, and `+ options[2]+`. ` + roll2 + ` was added`;
@@ -162,6 +163,7 @@ function getRandomInt(min, max) {
             if (document.querySelector(".roll2").disabled===true){
                 document.querySelector(".current").textContent = `Current round: ` + currentRound
             if (count===0){
+                document.querySelector(".player2").textContent = ``
                 options.push(getRandomInt(1, 6),getRandomInt(1, 6),getRandomInt(1, 6));
                 roll1=Math.max(options[0],options[1],options[2]);
                 document.querySelector(".player1").textContent = `Player 1 rolled: ` + options [0] + `, ` + options[1] + `, and `+ options[2]+`. ` + roll1 + ` was added`;
