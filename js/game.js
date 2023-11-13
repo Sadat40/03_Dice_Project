@@ -119,7 +119,7 @@ function getRandomInt(min, max) {
                             document.querySelector(".first").textContent=""
                         }
                         document.querySelector(".player2-wins").textContent=`Player 2's wins: ` +wins2;
-                        document.querySelector(".player1-wins").textContent=`Player 2's wins: ` +wins1;
+                        document.querySelector(".player1-wins").textContent=`Player 1's wins: ` +wins1;
                         document.querySelector(".total").textContent=`Total rounds: ` +totalRounds;
                             
                         score1=0;
@@ -209,7 +209,7 @@ function getRandomInt(min, max) {
                             document.querySelector(".first").textContent=""
                         }
                         document.querySelector(".player2-wins").textContent=`Player 2's wins: ` +wins2;
-                        document.querySelector(".player1-wins").textContent=`Player 2's wins: ` +wins1;
+                        document.querySelector(".player1-wins").textContent=`Player 1's wins: ` +wins1;
                         document.querySelector(".total").textContent=`Total rounds: ` +totalRounds;
                         score1=0;
                         score2=0;
@@ -266,7 +266,7 @@ function restart(){
         p2=false;
         document.getElementById("initial").style.display = "block";
         document.querySelector(".player2-wins").textContent=`Player 2's wins: ` 
-        document.querySelector(".player1-wins").textContent=`Player 2's wins: `
+        document.querySelector(".player1-wins").textContent=`Player 1's wins: `
         document.querySelector(".total").textContent=`Total rounds: ` 
         document.querySelector(".first").textContent="The game has restarted."
         document.querySelector(".player2").textContent = ``
