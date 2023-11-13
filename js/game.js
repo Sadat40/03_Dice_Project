@@ -45,12 +45,15 @@ function getRandomInt(min, max) {
                 document.querySelector(".first").textContent = `Player 1 rolled ${roll1}, they go first!`;
                 document.querySelector(".roll2").disabled = true;
                 document.querySelector(".roll1").disabled = false;
-                pastFirst=true;}
+                pastFirst=true;
+                document.querySelector(".current").textContent = `Current round: ` + currentRound
+            }
             else if (roll2 > roll1){
                 document.querySelector(".first").textContent = `Player 2 rolled ${roll2}, they go first!`;
                 document.querySelector(".roll1").disabled = true;
                 document.querySelector(".roll2").disabled = false;
                 pastFirst=true;
+                document.querySelector(".current").textContent = `Current round: ` + currentRound
                 }
             else{
                 document.querySelector(".first").textContent = "Both players rolled the same number, roll again";
@@ -60,6 +63,7 @@ function getRandomInt(min, max) {
                 document.querySelector(".player1").textContent = ``
                 roll1=undefined;
                 roll2=undefined; 
+                document.querySelector(".current").textContent = `Current round: ` + currentRound
             }
         }
     }
@@ -67,6 +71,7 @@ function getRandomInt(min, max) {
     document.querySelector(".roll2").addEventListener("click", function () {
         if (pastFirst===true){
             if (document.querySelector(".roll1").disabled===true){
+                document.querySelector(".current").textContent = `Current round: ` + currentRound
             if (count===0){
                 options.push(getRandomInt(1, 6),getRandomInt(1, 6),getRandomInt(1, 6));
                 roll2=Math.max(options[0],options[1],options[2]);
@@ -155,6 +160,7 @@ function getRandomInt(min, max) {
     document.querySelector(".roll1").addEventListener("click", function () {
         if (pastFirst===true){
             if (document.querySelector(".roll2").disabled===true){
+                document.querySelector(".current").textContent = `Current round: ` + currentRound
             if (count===0){
                 options.push(getRandomInt(1, 6),getRandomInt(1, 6),getRandomInt(1, 6));
                 roll1=Math.max(options[0],options[1],options[2]);
@@ -203,7 +209,6 @@ function getRandomInt(min, max) {
                         document.querySelector(".player2-wins").textContent=`Player 2's wins: ` +wins2;
                         document.querySelector(".player1-wins").textContent=`Player 2's wins: ` +wins1;
                         document.querySelector(".total").textContent=`Total rounds: ` +totalRounds;
-                        document.querySelector(".played").textContent=`Rounds played: ` +roundsPlayed;
                         score1=0;
                         score2=0;
                         p1=false;
@@ -240,7 +245,6 @@ function getRandomInt(min, max) {
     
     })
     document.querySelector(".restart").addEventListener("click", function () {
-        pastFirst=false;
         restart();
     })
 
@@ -262,7 +266,6 @@ function restart(){
         document.querySelector(".player2-wins").textContent=`Player 2's wins: ` 
         document.querySelector(".player1-wins").textContent=`Player 2's wins: `
         document.querySelector(".total").textContent=`Total rounds: ` 
-        document.querySelector(".played").textContent=`Rounds played: ` 
         document.querySelector(".first").textContent="The game has restarted."
         document.querySelector(".player2").textContent = ``
         document.querySelector(".player1").textContent = ``
@@ -272,10 +275,8 @@ function restart(){
         document.querySelector(".roll2").disabled = false;
         document.querySelector(".start").disabled = false;
         document.querySelector(".restart").disabled = true;
+        document.querySelector(".current").textContent = `Current round: ` 
         roll1=undefined;
         roll2=undefined;
         pastFirst=false;
     }
-//for total rounds, call game
-// Call the goesFirst function
-
